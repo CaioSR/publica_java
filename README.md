@@ -6,4 +6,4 @@ Não possui banco de dados.
 
 ## Execução
 
-Basta baixar o projeto e executar.
+Basta baixar o projeto e executar o Application
