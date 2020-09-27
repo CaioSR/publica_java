@@ -1,6 +1,12 @@
 package application;
 
 import java.util.ArrayList;
+
+/*
+ * Classe Season
+ * Possui o controle da pontuação bem como uma lista de jogos
+ */
+
 import java.util.List;
 
 public class Season {
@@ -20,6 +26,12 @@ public class Season {
 		}
 	}
 	
+	
+	/*
+	 * Verifica se a pontuação é válida
+	 * Chama os métodos de atualização de pontuação
+	 * Retorna true ou false dependendo da validez
+	 */
 	private boolean verifyScore(int score) {
 		if(score < 1000 && score > 0) {
 			if (score > maxScore) {
@@ -38,6 +50,10 @@ public class Season {
 		}
 	}
 	
+	/*
+	 * Atualiza a pontuação máxima
+	 * Caso não seja o primeiro jogo, incrementa o Counter
+	 */
 	private void updateMaxScore(int score) {
 		if(maxScore > 0) {
 			maxScoreCounter++;
@@ -45,6 +61,10 @@ public class Season {
 		maxScore = score;
 	}
 	
+	/*
+	 * Atualiza a pontuação mínima
+	 * Caso não seja o primeiro jogo, incrementa o Counter
+	 */
 	private void updateMinScore(int score) {
 		if(minScore > 0) {
 			minScoreCounter++;

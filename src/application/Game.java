@@ -1,5 +1,10 @@
 package application;
 
+/*
+ * Classe Game 
+ * Possui a pontuação do jogo
+ */
+
 public class Game {
 	private int score;
 	

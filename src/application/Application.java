@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Application {
 
+	/*
+	 * Realiza um loop básico para registrar um novo jogo e exibir as pontuações necessárias
+	 */
 	public static void main(String[] args) {
 		Season s = new Season();
 		
