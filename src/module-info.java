@@ -1,4 +1,4 @@
-module Publica {
+module publica {
 	exports application.tests;
 	exports application;
 

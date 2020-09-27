@@ -1,41 +1,38 @@
 package application;
 
+import java.util.List;
+import java.util.Scanner;
+
 public class Application {
 
 	public static void main(String[] args) {
 		Season s = new Season();
-		Game game1 = new Game(20);
-		Game game2 = new Game(10);
-		Game game3 = new Game(5);
-		Game game4 = new Game(30);
-
-		s.addGame(game1);
-
-		System.out.println(s.getMaxScore());
-		System.out.println(s.getMinScore());
-		System.out.println(s.getMaxScoreCounter());
-		System.out.println(s.getMinScoreCounter());
-		System.out.println("-----------------------");
 		
-		s.addGame(game2);
-		System.out.println(s.getMaxScore());
-		System.out.println(s.getMinScore());
-		System.out.println(s.getMaxScoreCounter());
-		System.out.println(s.getMinScoreCounter());
-		System.out.println("-----------------------");
+		Scanner scanner = new Scanner(System.in);
 		
-		s.addGame(game3);
-		System.out.println(s.getMaxScore());
-		System.out.println(s.getMinScore());
-		System.out.println(s.getMaxScoreCounter());
-		System.out.println(s.getMinScoreCounter());
-		System.out.println("-----------------------");
+		System.out.println("Pontuação Do Novo Jogo: (0 para sair)");
+		int input = scanner.nextInt();
 		
-		s.addGame(game4);
-		System.out.println(s.getMaxScore());
-		System.out.println(s.getMinScore());
-		System.out.println(s.getMaxScoreCounter());
-		System.out.println(s.getMinScoreCounter());
+		while(input != 0) {
+			Game g = new Game(input);
+			s.addGame(g);
+			
+			List<Game> games = s.getGames();
+			for (int i = 0; i < games.size(); i++) {
+				System.out.println("Pontuação do Jogo "+ (i+1)+ ": " + games.get(i).getScore());
+			}
+			System.out.println("Pontuação Máxima da Temporada " + s.getMaxScore());
+			System.out.println("Pontuação Mínima da Temporada " + s.getMinScore());
+			System.out.println("Quebra de Recorde Máximo da Temporada " +s .getMaxScoreCounter());
+			System.out.println("Quebra de Recorde Minimo da Temporada " +s .getMinScoreCounter());
+			System.out.println("-----------------------");
+			
+			System.out.println("Pontuação Do Novo Jogo: (0 para sair)");
+			input = scanner.nextInt();
+		}
+		
+		scanner.close();
+		System.exit(0);
 	}
 
 }
